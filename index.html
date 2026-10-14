@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ปาริชาติ นานอก (เป้ย) | Academic Portfolio</title>
+    <title>ปาริชาติ นานอก (เป้ย) | Cute Minimal Academic Portfolio</title>
     
     <!-- Google Fonts: Kanit & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,128 +20,163 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            200: '#bae0fd',
-                            300: '#7cc8fc',
-                            400: '#36b0f8',
-                            500: '#0c95e6',
-                            600: '#0076c4',
-                            700: '#025ea1',
-                            800: '#065085',
-                            900: '#0b436e',
-                        },
-                        slateDark: '#0f172a',
+                        pastel: {
+                            pink: '#fce7f3',
+                            pinkDark: '#f43f5e',
+                            rose: '#ffe4e6',
+                            roseText: '#e11d48',
+                            peach: '#ffedd5',
+                            peachText: '#ea580c',
+                            yellow: '#fef9c3',
+                            yellowText: '#ca8a04',
+                            mint: '#d1fae5',
+                            mintText: '#059669',
+                            sky: '#e0f2fe',
+                            skyText: '#0284c7',
+                            purple: '#f3e8ff',
+                            purpleText: '#9333ea',
+                            cream: '#fdfbf7',
+                            cardBg: '#ffffff',
+                            textDark: '#4a3e3d',
+                            textMuted: '#8c7a7b',
+                        }
                     },
                     fontFamily: {
                         sans: ['Kanit', 'Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'pastel': '0 10px 30px -10px rgba(244, 63, 94, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03)',
+                        'pastel-hover': '0 20px 35px -10px rgba(244, 63, 94, 0.15), 0 8px 16px -2px rgba(0, 0, 0, 0.05)',
+                        'soft': '0 4px 20px rgba(238, 225, 220, 0.5)',
                     }
                 }
             }
         }
     </script>
 
-    <!-- Custom CSS for specialized styles and print layout -->
+    <!-- Custom Style for Cute Pastel Aesthetics & Grid Background -->
     <style>
         body {
             font-family: 'Kanit', sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
+            background-color: #fdfbf7;
+            color: #4a3e3d;
         }
 
-        /* Smooth subtle grid pattern background */
-        .bg-grid-pattern {
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+        /* Pastel polka dot grid background */
+        .bg-pastel-dots {
+            background-image: radial-gradient(#f3d5d8 1.5px, transparent 1.5px);
             background-size: 24px 24px;
         }
 
-        /* Glassmorphism effects */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
+        /* Pastel Glass Card Style */
+        .pastel-card {
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            border: 2px solid #fce7f3;
         }
 
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        .pastel-card-peach {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 2px solid #ffedd5;
+        }
+
+        .pastel-card-sky {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 2px solid #e0f2fe;
+        }
+
+        .pastel-card-purple {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 2px solid #f3e8ff;
         }
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+            background: #fdfbf7;
         }
         ::-webkit-scrollbar-thumb {
-            background: #94a3b8;
+            background: #fbcfe8;
             border-radius: 9999px;
+            border: 2px solid #fdfbf7;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+            background: #f472b6;
         }
 
-        /* Animation classes */
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
+        /* Soft Floating Animations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
         }
-        .animate-glow {
-            animation: pulseGlow 6s infinite ease-in-out;
+        .animate-float {
+            animation: floatSlow 5s ease-in-out infinite;
         }
 
-        /* Print styles optimization for physical portfolio submissions */
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.08); opacity: 0.9; }
+        }
+        .animate-pulse-soft {
+            animation: pulseSoft 4s ease-in-out infinite;
+        }
+
+        /* Print styles optimization */
         @media print {
             .no-print { display: none !important; }
             body { background: white !important; color: black !important; }
-            .glass-card { border: 1px solid #ccc !important; box-shadow: none !important; }
-            .print-page-break { page-break-before: always; }
+            .pastel-card { border: 1px solid #ddd !important; box-shadow: none !important; }
         }
     </style>
 </head>
-<body class="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white relative">
+<body class="min-h-screen bg-pastel-cream bg-pastel-dots text-pastel-textDark antialiased selection:bg-pastel-pink selection:text-pastel-pinkDark relative">
 
-    <!-- Toast Notification Overlay -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-in-out pointer-events-none flex items-center space-x-3 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-slate-700">
-        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-in-out pointer-events-none flex items-center space-x-3 bg-white text-pastel-textDark px-5 py-3.5 rounded-2xl shadow-pastel border-2 border-pastel-rose">
+        <div class="w-8 h-8 rounded-full bg-pastel-rose text-pastel-roseText flex items-center justify-center font-bold text-sm">
+            <i class="fa-solid fa-heart"></i>
+        </div>
         <span id="toast-message" class="text-sm font-medium">คัดลอกข้อความแล้ว!</span>
     </div>
 
     <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 w-full glass-nav border-b border-slate-200/80 transition-all">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b-2 border-pastel-pink/60 transition-all">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
             <div class="flex items-center justify-between h-16 sm:h-20">
-                <!-- Logo / Name -->
+                <!-- Cute Logo -->
                 <a href="#hero" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                        ป
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-300 via-pink-200 to-amber-100 text-pastel-roseText flex items-center justify-center font-bold text-lg shadow-soft group-hover:scale-105 transition-transform">
+                        🌸
                     </div>
                     <div>
-                        <span class="text-lg font-bold text-slate-900 tracking-tight block">Parichat Nanok</span>
-                        <span class="text-xs text-brand-600 font-medium">Academic Portfolio</span>
+                        <span class="text-lg font-bold text-pastel-textDark tracking-tight block">Parichat Nanok</span>
+                        <span class="text-xs text-pastel-roseText font-medium flex items-center">
+                            <i class="fa-solid fa-sparkles text-[10px] mr-1"></i> Academic Portfolio
+                        </span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#profile" class="hover:text-brand-600 transition-colors">ประวัติส่วนตัว</a>
-                    <a href="#education" class="hover:text-brand-600 transition-colors">ประวัติการศึกษา</a>
-                    <a href="#skills" class="hover:text-brand-600 transition-colors">ทักษะความสามารถ</a>
-                    <a href="#activities" class="hover:text-brand-600 transition-colors">ผลงาน & กิจกรรม</a>
-                    <a href="#contact" class="hover:text-brand-600 transition-colors">ติดต่อ</a>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-pastel-textMuted">
+                    <a href="#profile" class="hover:text-pastel-pinkDark transition-colors py-1">ประวัติส่วนตัว</a>
+                    <a href="#education" class="hover:text-pastel-pinkDark transition-colors py-1">การศึกษา</a>
+                    <a href="#skills" class="hover:text-pastel-pinkDark transition-colors py-1">ทักษะ</a>
+                    <a href="#contact" class="hover:text-pastel-pinkDark transition-colors py-1">ติดต่อ</a>
                 </nav>
 
                 <!-- Actions -->
                 <div class="hidden sm:flex items-center space-x-3">
-                    <button onclick="window.print()" class="no-print inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 transition-all">
+                    <button onclick="window.print()" class="no-print inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-2xl bg-pastel-rose/50 text-pastel-roseText border border-pastel-rose hover:bg-pastel-rose transition-all">
                         <i class="fa-solid fa-print"></i>
-                        <span>พิมพ์ / พรีวิว PDF</span>
+                        <span>พรีวิว PDF</span>
                     </button>
-                    <a href="#contact" class="inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-500/25 transition-all hover:scale-105">
+                    <a href="#contact" class="inline-flex items-center space-x-2 text-xs font-semibold px-4 py-2.5 rounded-2xl bg-gradient-to-r from-rose-400 to-pink-400 text-white shadow-soft hover:shadow-pastel-hover transition-all hover:-translate-y-0.5">
                         <i class="fa-solid fa-paper-plane"></i>
                         <span>ติดต่อเป้ย</span>
                     </a>
@@ -149,7 +184,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="flex md:hidden">
-                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-slate-900 p-2 rounded-lg focus:outline-none" aria-label="Toggle navigation">
+                    <button id="mobile-menu-btn" type="button" class="text-pastel-textDark hover:text-pastel-pinkDark p-2 rounded-xl focus:outline-none" aria-label="Toggle navigation">
                         <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
                     </button>
                 </div>
@@ -157,683 +192,54 @@
         </div>
 
         <!-- Mobile dropdown menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 px-4 pt-3 pb-6 space-y-3">
-            <a href="#profile" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">ประวัติส่วนตัว</a>
-            <a href="#education" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">ประวัติการศึกษา</a>
-            <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">ทักษะความสามารถ</a>
-            <a href="#activities" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">ผลงาน & กิจกรรม</a>
-            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">ช่องทางติดต่อ</a>
-            <div class="pt-2 flex flex-col space-y-2">
-                <button onclick="window.print()" class="w-full text-center py-2.5 rounded-lg border border-slate-300 text-slate-700 font-medium text-sm">
-                    <i class="fa-solid fa-print mr-2"></i>พิมพ์ / บันทึกเป็น PDF
+        <div id="mobile-menu" class="hidden md:hidden border-t-2 border-pastel-pink bg-white/95 px-4 pt-3 pb-6 space-y-2">
+            <a href="#profile" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-pastel-textDark hover:bg-pastel-pink">ประวัติส่วนตัว</a>
+            <a href="#education" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-pastel-textDark hover:bg-pastel-pink">ประวัติการศึกษา</a>
+            <a href="#skills" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-pastel-textDark hover:bg-pastel-pink">ทักษะความสามารถ</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-pastel-textDark hover:bg-pastel-pink">ช่องทางติดต่อ</a>
+            <div class="pt-2">
+                <button onclick="window.print()" class="w-full text-center py-2.5 rounded-xl bg-pastel-rose/50 text-pastel-roseText font-medium text-sm">
+                    <i class="fa-solid fa-print mr-2"></i>พิมพ์ / พรีวิว PDF
                 </button>
             </div>
         </div>
     </header>
 
     <!-- MAIN CONTENT WRAPPER -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-12">
 
         <!-- HERO SECTION -->
-        <section id="hero" class="relative pt-6 pb-8 md:py-12">
-            <!-- Decorative background elements -->
-            <div class="absolute top-0 -left-12 w-72 h-72 bg-brand-300/30 rounded-full blur-3xl animate-glow pointer-events-none"></div>
-            <div class="absolute bottom-0 -right-12 w-80 h-80 bg-sky-200/40 rounded-full blur-3xl animate-glow pointer-events-none" style="animation-delay: 2s;"></div>
+        <section id="hero" class="relative pt-4 pb-6 md:py-10">
+            <!-- Floating Pastel Decorative Blobs -->
+            <div class="absolute top-0 -left-10 w-64 h-64 bg-pastel-pink/60 rounded-full blur-3xl animate-pulse-soft pointer-events-none"></div>
+            <div class="absolute bottom-0 -right-10 w-72 h-72 bg-pastel-peach/70 rounded-full blur-3xl animate-pulse-soft pointer-events-none" style="animation-delay: 2s;"></div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 
-                <!-- Left: Profile Image Frame -->
+                <!-- Left: Profile Image Frame (Rectangular Shape with Cute Elements) -->
                 <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative group">
-                        <!-- Outer Decorative Ring -->
-                        <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-500 to-sky-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative group w-60 sm:w-64">
                         
-                        <!-- Main Avatar Container -->
-                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-slate-100">
-                            <!-- Image with fallback -->
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
-                                 alt="ปาริชาติ นานอก" 
-                                 class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e0effe/025ea1?text=Parichat+Nanok';">
+                        <!-- Cute Floating Decorative Badge -->
+                        <div class="absolute -top-4 -right-4 z-20 bg-white p-2.5 rounded-2xl shadow-pastel border-2 border-pastel-pink animate-float flex items-center space-x-1.5 text-xs font-bold text-pastel-roseText">
+                            <span>✨</span>
+                            <span>วสส. ขอนแก่น</span>
+                        </div>
+
+                        <!-- Outer Pastel Glow Ring -->
+                        <div class="absolute -inset-2 bg-gradient-to-tr from-pink-200 via-rose-200 to-amber-200 rounded-[2.2rem] blur-md opacity-80 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <!-- Main Rectangular Photo Container -->
+                        <div class="relative aspect-[3/4] w-full rounded-[2rem] overflow-hidden border-4 border-white shadow-pastel bg-white">
+                            <img src="profile.jpg" 
+                                 alt="นางสาวปาริชาติ นานอก (เป้ย)" 
+                                 class="w-full h-full object-cover object-[65%_20%] transform group-hover:scale-105 transition-transform duration-500"
+                                 onerror="if(!this.dataset.step){this.dataset.step='1';this.src='IMG_1268.JPG';}else if(this.dataset.step==='1'){this.dataset.step='2';this.src='IMG_1268_2.JPG';}else{this.onerror=null;this.src='https://placehold.co/400x533/fce7f3/e11d48?text=Parichat+Nanok';}">
                             
-                            <!-- Nurse/Healthcare Specialization Tag -->
-                            <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center space-x-1.5 text-brand-700">
-                                <i class="fa-solid fa-user-nurse text-base"></i>
-                                <span class="text-xs font-semibold">ปฐมพยาบาล & Health Care</span>
-                            </div>
-                        </div>
-
-                        <!-- Secondary floating badge -->
-                        <div class="absolute -top-2 -left-2 bg-slate-900 text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-lg border border-slate-700 flex items-center space-x-2">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            <span>TCAS Portfolio Ready</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Bio Intro & Core Facts -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 text-brand-800 text-xs sm:text-sm font-semibold border border-brand-200">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>แผนการเรียน วิทยาศาสตร์ - คณิตศาสตร์</span>
-                    </div>
-
-                    <div class="space-y-2">
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                            นางสาวปาริชาติ นานอก
-                        </h1>
-                        <p class="text-lg sm:text-xl font-medium text-slate-600">
-                            MISS PARICHAT NANOK <span class="text-brand-600 font-semibold">(เป้ย / Pei)</span>
-                        </p>
-                    </div>
-
-                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed mx-auto lg:mx-0">
-                        นักเรียนสายวิทยาศาสตร์-คณิตศาสตร์ ที่มีความสนใจในด้านสุขภาพ คอมพิวเตอร์ และการสร้างสรรค์สื่อ มุ่งมั่นตั้งใจเรียนรู้ มีทักษะการปฐมพยาบาลเบื้องต้น พร้อมทั้งความสามารถด้านการตัดต่อวิดีโอและการสื่อสารอย่างสร้างสรรค์
-                    </p>
-
-                    <!-- Core Quick Highlight Stats Grid -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
-                        <div class="p-3.5 rounded-2xl glass-card text-center border border-slate-200/60 shadow-sm">
-                            <span class="block text-2xl font-bold text-brand-600">3.75</span>
-                            <span class="text-xs text-slate-500 font-medium">GPAX ม.ปลาย</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl glass-card text-center border border-slate-200/60 shadow-sm">
-                            <span class="block text-2xl font-bold text-brand-600">3.87</span>
-                            <span class="text-xs text-slate-500 font-medium">GPAX ม.ต้น</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl glass-card text-center border border-slate-200/60 shadow-sm">
-                            <span class="block text-2xl font-bold text-slate-800">18 ปี</span>
-                            <span class="text-xs text-slate-500 font-medium">อายุ</span>
-                        </div>
-                        <div class="p-3.5 rounded-2xl glass-card text-center border border-slate-200/60 shadow-sm">
-                            <span class="block text-2xl font-bold text-slate-800">166 cm</span>
-                            <span class="text-xs text-slate-500 font-medium">ส่วนสูง / 46 kg</span>
-                        </div>
-                    </div>
-
-                    <!-- Call To Actions -->
-                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3">
-                        <a href="#profile" class="px-6 py-3 rounded-xl bg-slate-900 text-white font-medium text-sm hover:bg-slate-800 transition-all shadow-md flex items-center space-x-2">
-                            <span>ดูประวัติโดยละเอียด</span>
-                            <i class="fa-solid fa-arrow-down text-xs"></i>
-                        </a>
-                        <a href="#activities" class="px-6 py-3 rounded-xl bg-white text-slate-700 border border-slate-300 font-medium text-sm hover:bg-slate-50 transition-all flex items-center space-x-2">
-                            <i class="fa-solid fa-photo-film text-brand-600"></i>
-                            <span>ชมผลงานตัดต่อ & MV</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION: PROFILE & FAMILY INFORMATION -->
-        <section id="profile" class="space-y-6 pt-4">
-            <div class="border-l-4 border-brand-600 pl-4">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">ข้อมูลส่วนตัว & ครอบครัว</h2>
-                <p class="text-slate-500 text-sm">Personal & Family Background Information</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                
-                <!-- Personal Info Card -->
-                <div class="md:col-span-7 glass-card rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
-                    <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-100">
-                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
-                            <i class="fa-solid fa-id-card text-lg"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900">รายละเอียดส่วนตัว</h3>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm">
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">ชื่อ-นามสกุล (TH)</span>
-                            <span class="font-semibold text-slate-800 text-base">นางสาวปาริชาติ นานอก</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">Name-Surname (EN)</span>
-                            <span class="font-semibold text-slate-800 text-base">MISS PARICHAT NANOK</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">ชื่อเล่น</span>
-                            <span class="font-semibold text-slate-800">เป้ย (Pei)</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">วัน-เดือน-ปีเกิด</span>
-                            <span class="font-semibold text-slate-800">15 กันยายน 2550 (2007)</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">อายุ</span>
-                            <span class="font-semibold text-slate-800">18 ปี</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">สัญชาติ / เชื้อชาติ / ศาสนา</span>
-                            <span class="font-semibold text-slate-800">ไทย / ไทย / พุทธ</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">ส่วนสูง & น้ำหนัก</span>
-                            <span class="font-semibold text-slate-800">166 ซม. / 46 กก.</span>
-                        </div>
-                        <div>
-                            <span class="text-xs text-slate-400 font-medium block">แผนการเรียน</span>
-                            <span class="font-semibold text-brand-700 bg-brand-50 px-2 py-0.5 rounded border border-brand-200 inline-block mt-0.5">วิทยาศาสตร์ - คณิตศาสตร์</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Family Background & Quick Contact Card -->
-                <div class="md:col-span-5 space-y-6">
-                    <!-- Family Info Card -->
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
-                        <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-100">
-                            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
-                                <i class="fa-solid fa-users text-lg"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900">ข้อมูลครอบครัว</h3>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400">บิดา</p>
-                                        <p class="font-semibold text-slate-800 text-sm">นายสุชาติ นานอก</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-semibold px-2.5 py-1 bg-white rounded-lg border border-slate-200 text-slate-600">อายุ 52 ปี</span>
-                            </div>
-
-                            <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">
-                                        <i class="fa-solid fa-user"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400">มารดา</p>
-                                        <p class="font-semibold text-slate-800 text-sm">นางพิกุล นานอก</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-semibold px-2.5 py-1 bg-white rounded-lg border border-slate-200 text-slate-600">อายุ 42 ปี</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Highlight Badge Card -->
-                    <div class="bg-gradient-to-br from-brand-600 to-brand-800 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
-                        <i class="fa-solid fa-quote-left text-brand-300 text-3xl mb-2 opacity-50"></i>
-                        <p class="text-sm font-light text-brand-100 leading-relaxed">
-                            "มีความพร้อมในการเรียนรู้สิ่งใหม่ๆ มุ่งมั่นพัฒนาตนเองทั้งในด้านวิชาการ สายงานวิทยาศาสตร์สุขภาพ และทักษะดิจิทัล"
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION: EDUCATION TIMELINE -->
-        <section id="education" class="space-y-6 pt-4">
-            <div class="border-l-4 border-brand-600 pl-4">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">ประวัติการศึกษา</h2>
-                <p class="text-slate-500 text-sm">Educational Background & Academic GPAX Highlights</p>
-            </div>
-
-            <div class="relative pl-6 sm:pl-8 border-l-2 border-brand-200 space-y-8 my-6 ml-2 sm:ml-4">
-                
-                <!-- Upper Secondary School (ม.4-6) -->
-                <div class="relative group">
-                    <!-- Timeline Node Pin -->
-                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-600 border-4 border-white shadow-md group-hover:scale-125 transition-transform"></div>
-                    
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 hover:border-brand-300 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                            <div>
-                                <span class="text-xs font-bold text-brand-600 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full uppercase tracking-wider">
-                                    ระดับชั้นมัธยมศึกษาปีที่ 4 - 6
-                                </span>
-                                <h3 class="text-xl font-bold text-slate-900 mt-2">โรงเรียนหนองสองห้องวิทยา</h3>
-                                <p class="text-xs text-slate-500">อำเภอหนองสองห้อง จังหวัดขอนแก่น</p>
-                            </div>
-                            <div class="sm:text-right bg-slate-900 text-white p-3 rounded-2xl inline-block sm:block self-start sm:self-auto">
-                                <span class="text-xs text-slate-400 font-medium block">ผลการเรียนเฉลีย์สะสม</span>
-                                <span class="text-2xl font-extrabold text-brand-400">GPAX: 3.75</span>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 text-sm">
-                            แผนการเรียน วิทยาศาสตร์ - คณิตศาสตร์ เน้นทักษะการคิดวิเคราะห์ การทดลองทางวิทยาศาสตร์ คณิตศาสตร์ประยุกต์ และกิจกรรมเสริมหลักสูตร
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Lower Secondary School (ม.1-3) -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-400 border-4 border-white shadow-md group-hover:scale-125 transition-transform"></div>
-                    
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 hover:border-brand-300 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                            <div>
-                                <span class="text-xs font-bold text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full uppercase tracking-wider">
-                                    ระดับชั้นมัธยมศึกษาปีที่ 1 - 3
-                                </span>
-                                <h3 class="text-xl font-bold text-slate-900 mt-2">โรงเรียนสัตหีบวิทยาคม</h3>
-                                <p class="text-xs text-slate-500">อำเภอสัตหีบ จังหวัดชลบุรี</p>
-                            </div>
-                            <div class="sm:text-right bg-brand-50 border border-brand-200 text-brand-900 p-3 rounded-2xl inline-block sm:block self-start sm:self-auto">
-                                <span class="text-xs text-brand-600 font-medium block">ผลการเรียนเฉลี่ยสะสม</span>
-                                <span class="text-2xl font-extrabold text-brand-700">GPAX: 3.87</span>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 text-sm">
-                            ศึกษาและสร้างพื้นฐานการเรียนรู้ระดับมัธยมศึกษาตอนต้น ได้รับผลการเรียนในระดับดีเยี่ยม พร้อมการเข้าร่วมกิจกรรมโรงเรียนอย่างสม่ำเสมอ
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Primary School (ประถมศึกษาปีที่ 6) -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-slate-400 border-4 border-white shadow-md group-hover:scale-125 transition-transform"></div>
-                    
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 hover:border-slate-300 transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div>
-                                <span class="text-xs font-bold text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full uppercase tracking-wider">
-                                    ระดับชั้นประถมศึกษาปีที่ 6
-                                </span>
-                                <h3 class="text-xl font-bold text-slate-900 mt-2">โรงเรียนบ้านเมย</h3>
-                                <p class="text-xs text-slate-500">ตำบลหนองสองห้อง อำเภอหนองสองห้อง จังหวัดขอนแก่น</p>
+                            <!-- Profile Badge with Name Only -->
+                            <div class="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md py-2 px-3 rounded-2xl border border-pastel-pink shadow-sm text-center">
+                                <span class="text-xs font-bold text-pastel-textDark block">นางสาวปาริชาติ นานอก</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION: SKILLS & ABILITIES -->
-        <section id="skills" class="space-y-6 pt-4">
-            <div class="border-l-4 border-brand-600 pl-4">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">ทักษะและความสามารถ</h2>
-                <p class="text-slate-500 text-sm">Skills, Competencies & Software Proficiency</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                
-                <!-- Primary Core Skills Cards -->
-                <div class="md:col-span-6 space-y-4">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2 flex items-center space-x-2">
-                        <i class="fa-solid fa-star text-amber-500"></i>
-                        <span>ความสามารถโดดเด่น (Core Skills)</span>
-                    </h3>
-
-                    <!-- Skill 1: First Aid -->
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200/80 flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex-shrink-0 flex items-center justify-center text-xl shadow-sm border border-red-100">
-                            <i class="fa-solid fa-kit-medical"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-base">ทักษะการปฐมพยาบาลเบื้องต้น</h4>
-                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                                มีความรู้และความเข้าใจในการปฐมพยาบาลเบื้องต้น การประเมินสถานการณ์ฉุกเฉิน และการดูแลช่วยเหลือผู้ป่วยหรือผู้ได้รับบาดเจ็บในสถานศึกษา
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Skill 2: Computer & Media -->
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200/80 flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex-shrink-0 flex items-center justify-center text-xl shadow-sm border border-brand-100">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-base">ทักษะด้านคอมพิวเตอร์ & สื่อดิจิทัล</h4>
-                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                                สามารถใช้งานคอมพิวเตอร์และโปรแกรมพื้นฐานได้เป็นอย่างดี จัดทำเอกสาร สไลด์นำเสนอ และการสืบค้นข้อมูลเชิงวิชาการได้อย่างมีประสิทธิภาพ
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Skill 3: Acting & Video Editing -->
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200/80 flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex-shrink-0 flex items-center justify-center text-xl shadow-sm border border-purple-100">
-                            <i class="fa-solid fa-film"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-base">การตัดต่อวิดีโอ & แสดง Cover MV</h4>
-                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
-                                ร่วมแสดงผลงาน Music Video Cover ตัดต่อคลิปวิดีโอสั้นและยาว จัดเรียง Storyboard การคัดเลือกเพลง และการใส่เอฟเฟกต์สื่อ
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Software & Tools Progress Bars -->
-                <div class="md:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80">
-                    <h3 class="text-lg font-bold text-slate-800 mb-6 flex items-center space-x-2">
-                        <i class="fa-solid fa-sliders text-brand-600"></i>
-                        <span>ความชำนาญการใช้โปรแกรม (Software Proficiency)</span>
-                    </h3>
-
-                    <div class="space-y-6">
-                        <!-- Canva (90%) -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <div class="flex items-center space-x-2">
-                                    <span class="w-7 h-7 rounded-lg bg-sky-100 text-sky-600 font-bold text-xs flex items-center justify-center">C</span>
-                                    <span class="font-medium text-slate-800 text-sm">Canva Graphic Design</span>
-                                </div>
-                                <span class="text-sm font-bold text-brand-600">90%</span>
-                            </div>
-                            <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
-                                <div class="h-full bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-1000" style="width: 90%;"></div>
-                            </div>
-                        </div>
-
-                        <!-- CapCut / Video Editor (80%) -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <div class="flex items-center space-x-2">
-                                    <span class="w-7 h-7 rounded-lg bg-slate-900 text-white font-bold text-xs flex items-center justify-center">
-                                        <i class="fa-solid fa-scissors"></i>
-                                    </span>
-                                    <span class="font-medium text-slate-800 text-sm">CapCut / Video Editing</span>
-                                </div>
-                                <span class="text-sm font-bold text-brand-600">80%</span>
-                            </div>
-                            <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
-                                <div class="h-full bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-1000" style="width: 80%;"></div>
-                            </div>
-                        </div>
-
-                        <!-- Microsoft Word / Office (60%) -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <div class="flex items-center space-x-2">
-                                    <span class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">W</span>
-                                    <span class="font-medium text-slate-800 text-sm">Microsoft Word & Office</span>
-                                </div>
-                                <span class="text-sm font-bold text-brand-600">60%</span>
-                            </div>
-                            <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
-                                <div class="h-full bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-1000" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Skills Badges -->
-                    <div class="mt-8 pt-6 border-t border-slate-100">
-                        <span class="text-xs text-slate-400 font-medium block mb-3">ทักษะสนับสนุนอื่นๆ</span>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">การทำงานเป็นทีม</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">การสื่อสารนำเสนอ</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">การจัดทำรูปเล่มรายงาน</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">การประยุกต์ใช้วิทยาศาสตร์</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION: ACTIVITIES & HIGHLIGHTS -->
-        <section id="activities" class="space-y-6 pt-4">
-            <div class="border-l-4 border-brand-600 pl-4">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">ผลงาน & กิจกรรมไฮไลท์</h2>
-                <p class="text-slate-500 text-sm">Featured Activities, Cover MV Production & Projects</p>
-            </div>
-
-            <!-- Featured Showcase Card -->
-            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80 overflow-hidden relative shadow-sm">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- Thumbnail Preview -->
-                    <div class="lg:col-span-5 relative group cursor-pointer" onclick="openMediaModal()">
-                        <div class="relative aspect-video rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-md">
-                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" 
-                                 alt="Music Cover MV" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/ffffff?text=MUSIC+COVER+MV+2567';">
-                            <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-all flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-white/90 text-brand-600 flex items-center justify-center text-xl shadow-xl group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-play ml-1"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="text-xs text-slate-400 text-center block mt-2">
-                            <i class="fa-solid fa-magnifying-glass-plus mr-1"></i>คลิกเพื่อดูตัวอย่างกิจกรรม
-                        </span>
-                    </div>
-
-                    <!-- MV Details Text -->
-                    <div class="lg:col-span-7 space-y-4">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-semibold">
-                            <i class="fa-solid fa-clapperboard"></i>
-                            <span>ผลงานเด่น ปี 2567</span>
-                        </div>
-
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
-                            การร่วมแสดง COVER MV & เป็นผู้ตัดต่อคลิปวิดีโอ
-                        </h3>
-
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            ผลงานการสร้างสรรค์สื่อ มิวสิกวิดีโอคัฟเวอร์ (MUSIC COVER 526) ซึ่งรับหน้าที่ 2 บทบาทสำคัญ ทั้งการร่วมเป็นนักแสดงถ่ายทอดอารมณ์เพลง และเป็นผู้ตัดต่อเรียบเรียงคลิปวิดีโอ (Video Editor) จัดจังหวะภาพ การตัดต่อซิงค์เสียงเพลง และปรับแต่งโทนสีวิดีโอ
-                        </p>
-
-                        <div class="grid grid-cols-2 gap-3 pt-2">
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                                <span class="text-xs text-slate-400 block font-medium">บทบาท 1</span>
-                                <span class="text-sm font-semibold text-slate-800">นักแสดง Cover MV</span>
-                            </div>
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                                <span class="text-xs text-slate-400 block font-medium">บทบาท 2</span>
-                                <span class="text-sm font-semibold text-slate-800">ตัดต่อ & เรียบเรียงคลิป</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: CONTACT INFORMATION -->
-        <section id="contact" class="space-y-6 pt-4">
-            <div class="border-l-4 border-brand-600 pl-4">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">ช่องทางการติดต่อ</h2>
-                <p class="text-slate-500 text-sm">Get in Touch & Address Details</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                
-                <!-- Contact Links -->
-                <div class="md:col-span-6 space-y-4">
-                    
-                    <!-- Facebook -->
-                    <a href="https://facebook.com" target="_blank" class="glass-card rounded-2xl p-4 border border-slate-200/80 flex items-center justify-between hover:border-blue-300 hover:bg-blue-50/30 transition-all group">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shadow-md">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-400 block font-medium">Facebook</span>
-                                <span class="font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Parichat Nanok</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-blue-600 transition-colors"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="https://instagram.com/prchnz" target="_blank" class="glass-card rounded-2xl p-4 border border-slate-200/80 flex items-center justify-between hover:border-pink-300 hover:bg-pink-50/30 transition-all group">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-xl shadow-md">
-                                <i class="fa-brands fa-instagram"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-400 block font-medium">Instagram</span>
-                                <span class="font-bold text-slate-800 group-hover:text-pink-600 transition-colors">prchnz</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-pink-600 transition-colors"></i>
-                    </a>
-
-                    <!-- Email (With Copy Button) -->
-                    <div class="glass-card rounded-2xl p-4 border border-slate-200/80 flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-md">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="overflow-hidden">
-                                <span class="text-xs text-slate-400 block font-medium">Email Address</span>
-                                <span id="email-text" class="font-bold text-slate-800 text-xs sm:text-sm truncate block">parichatnanok2@gmail.com</span>
-                            </div>
-                        </div>
-                        <button onclick="copyToClipboard('parichatnanok2@gmail.com', 'คัดลอกอีเมลเรียบร้อยแล้ว!')" class="px-3 py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 rounded-xl text-slate-600 text-xs font-semibold transition-all flex items-center space-x-1 flex-shrink-0">
-                            <i class="fa-regular fa-copy"></i>
-                            <span class="hidden sm:inline">คัดลอก</span>
-                        </button>
-                    </div>
-
-                </div>
-
-                <!-- Address Card -->
-                <div class="md:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4 pb-3 border-b border-slate-100">
-                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
-                                <i class="fa-solid fa-location-dot text-lg"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900">ที่อยู่ปัจจุบัน (Address)</h3>
-                        </div>
-
-                        <p class="text-slate-700 text-sm leading-relaxed mt-2 font-medium">
-                            บ้านเลขที่ 112 หมู่ 8 บ้านเมย<br>
-                            ตำบลหนองสองห้อง อำเภอหนองสองห้อง<br>
-                            จังหวัดขอนแก่น 40190
-                        </p>
-                    </div>
-
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <span class="text-xs text-slate-400">ขอนแก่น, ประเทศไทย</span>
-                        <button onclick="copyToClipboard('บ้านเลขที่ 112 หมู่ 8 บ้านเมย ตำบลหนองสองห้อง อำเภอหนองสองห้อง จังหวัดขอนแก่น 40190', 'คัดลอกที่อยู่เรียบร้อยแล้ว!')" class="px-4 py-2 bg-slate-900 text-white hover:bg-slate-800 rounded-xl text-xs font-medium transition-all shadow-sm">
-                            <i class="fa-regular fa-copy mr-1.5"></i>คัดลอกที่อยู่
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="mt-20 border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
-        <div class="max-w-6xl mx-auto px-4 space-y-2">
-            <p>© 2026 Academic Portfolio - นางสาวปาริชาติ นานอก (Parichat Nanok)</p>
-            <p class="text-slate-400">พัฒนาด้วย Tailwind CSS | รองรับ GitHub Pages Hosting</p>
-        </div>
-    </footer>
-
-    <!-- MEDIA PREVIEW MODAL -->
-    <div id="media-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 space-y-4 relative shadow-2xl">
-            <button onclick="closeMediaModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center font-bold">
-                ✕
-            </button>
-
-            <h3 class="text-xl font-bold text-slate-900">กิจกรรม MUSIC COVER MV (2567)</h3>
-            <div class="aspect-video bg-slate-900 rounded-2xl overflow-hidden flex items-center justify-center text-white text-center p-6 border">
-                <div>
-                    <i class="fa-solid fa-film text-4xl text-brand-400 mb-3 block"></i>
-                    <p class="font-medium">ตัวอย่างผลงาน MV Cover & การตัดต่อคลิป</p>
-                    <p class="text-xs text-slate-400 mt-1">สามารถใส่ลิงก์ YouTube Embed ได้ในไฟล์ index.html</p>
-                </div>
-            </div>
-            <p class="text-xs text-slate-500">
-                กิจกรรมร่วมแสดงและตัดต่อคลิปวิดีโอ ฝึกฝนทักษะการลำดับภาพ การทำงานร่วมกับเพื่อน และการนำเสนอสื่อบันเทิง
-            </p>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Mobile Navigation Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.className = 'fa-solid fa-bars text-xl';
-            } else {
-                menuIcon.className = 'fa-solid fa-xmark text-xl';
-            }
-        });
-
-        // Close mobile menu when link clicked
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.className = 'fa-solid fa-bars text-xl';
-            });
-        });
-
-        // Copy to Clipboard Utility
-        function copyToClipboard(text, successMsg) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text);
-            } else {
-                // Fallback for iFrame or older browsers
-                const textArea = document.createElement("textarea");
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.focus();
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                } catch (err) {
-                    console.error('Fallback copy failed', err);
-                }
-                document.body.removeChild(textArea);
-            }
-            showToast(successMsg);
-        }
-
-        // Custom Toast Notification System
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            
-            toastMessage.textContent = message;
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
-        }
-
-        // Modal Handlers
-        function openMediaModal() {
-            const modal = document.getElementById('media-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeMediaModal() {
-            const modal = document.getElementById('media-modal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-        }
-
-        // Close Modal on clicking backdrop
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('media-modal');
-            if (e.target === modal) {
-                closeMediaModal();
-            }
-        });
-    </script>
-</body>
-</html>
